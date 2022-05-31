@@ -62,7 +62,7 @@ class TestGetProduct(TestCase):
 class New_Product_Authentication_Test(TestCase):
     def setup(self):
         self.test_user=user.objects.Create_user(usernane='testuser1', password='p@ssw0rd1')
-        self.type=Type.objects.Create(typename='laptop')
+        self.type=TechcType.objects.Create(typename='laptop')
         self.product=product.objects.Create(productname='lenovo', producttype=self.type, user=self.test_user, dateentered=datetime.date (2020,1,10), price=1200.99)
 
     def test_redirect_if_not logged _in (self):
