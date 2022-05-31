@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from .models import TechType, Review, TechProduct
 from django .urls import reverse_lazy
 from .forms import ProductForm
-from django.contrib.auth.decorations import login_required
+from django.contrib.auth.decorators import login_required
 
 # create your views here.
 def index(request):
@@ -15,7 +15,7 @@ def products(request):
 
 def productDetail(request, id):
     product=get_object_or_404(product, pk=id)
-    return render(request, 'tech/productdetail.html', {'product' : product})
+    return render(request, 'club/productdetail.html', {'product' : product})
 @login_required
 def  newProduct(request):
     form=ProductForm
@@ -29,9 +29,9 @@ def  newProduct(request):
             form=ProductForm()
         else:
             form=ProductForm()
-            return render(request, 'tech/newproduct.html', {'form':form})
+    return render(request, 'club/newproduct.html', {'form':form})
 def loginmessage(request):
-           return render(request,  'tech/loginmessage,htlm')
+    return render(request,  'club/loginmessage.html')
 
-def loginmessage(request):
-           return render(request,  'tech/logoutmessage,htlm')
+def logoutmessage(request):
+    return render(request,  'club/logoutmessage.html')
