@@ -1,5 +1,5 @@
-{% entends 'base.html '%}
-{% bllock content %}
+{% extends 'base.html '%}
+{% block content %}
 <h2>product Detail</h2>
 <p>product Name : {{product.productname}}<br/>
 Product Type : {{product.producttype))<br/>
@@ -7,4 +7,4 @@ Product price : {{product.Price}}<br/>
 Product Url : {{product.Producturl}}<br/>
 Product Description : ((product.description))
 </p>
-{% enblock %}
+{% endblock %}
